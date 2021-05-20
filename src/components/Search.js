@@ -19,9 +19,9 @@ function Search({ handleResult }) {
 
 
     const [searchState, requestDispatch] = useAlgolia(
-        process.env.ALGOLIA_APPID,
-        process.env.ALGOLIA_SEARCHKEY,
-        process.env.ALGOLIA_SEARCHINDEX,
+        process.env.REACT_APP_ALGOLIA_APPID,
+        process.env.REACT_APP_ALGOLIA_SEARCHKEY,
+        process.env.REACT_APP_ALGOLIA_SEARCHINDEX,
         { query: query }
     );
     const { hits } = searchState;
