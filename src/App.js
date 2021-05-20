@@ -1,10 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import "./App.css"
 import Search from './components/Search'
 
 const Video = (params) => {
+  const vidRef = useRef(null);
+  const handlePlayVideo = () => {
+    vidRef.current.play();
+  }
 
-  return <video src={params.videoUrl}></video>
+  return <div className="vid-wrapper">
+    <video ref={vidRef} src={params.videoUrl} autoPlay={true}>
+    </video>
+  </div>
 }
 
 
@@ -13,7 +20,9 @@ export default function App() {
   const [result, setResult] = useState('');
 
   useEffect(() => {
-    console.log(result)
+    if (result.length > 0) {
+      setVideo(result[0].path)
+    }
   }, [result])
 
   return (
