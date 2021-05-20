@@ -1,15 +1,10 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./App.css"
 import Search from './components/Search'
 
 const Video = (params) => {
-  const vidRef = useRef(null);
-  const handlePlayVideo = () => {
-    vidRef.current.play();
-  }
-
   return <div className="vid-wrapper">
-    <video ref={vidRef} src={params.videoUrl} autoPlay={true}>
+    <video src={params.videoUrl} autoPlay={true}>
     </video>
   </div>
 }
