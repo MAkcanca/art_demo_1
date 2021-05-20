@@ -38,7 +38,17 @@ input {
   width: 45%;
   height: 45px;
   font-size: 2em;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: whitesmoke;
+  background: transparent;
+  color:white;
 }
+
+input:focus {
+  border-color: white;
+}
+
 
 html {
   height: 100%;
